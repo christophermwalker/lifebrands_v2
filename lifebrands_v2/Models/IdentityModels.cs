@@ -1,9 +1,13 @@
-﻿using System.Data.Entity;
+﻿using System.Data;
+using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using lifebrands_v2.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web.Script.Serialization;
+using System.Collections.Generic;
 
 namespace lifebrands_v2.Models
 {
@@ -21,14 +25,33 @@ namespace lifebrands_v2.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<ProductsMaster> products { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+        
+    }
+    public class DatabaseContext : DbContext
+    {
+        public DatabaseContext() : base("DBConnection")
+        {
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public virtual DbSet<products> Products { get; set; }
+        public static DatabaseContext Create()
+        {
+            return new DatabaseContext();
         }
     }
 }

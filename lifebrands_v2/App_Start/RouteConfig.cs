@@ -11,8 +11,15 @@ namespace lifebrands_v2
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-           /* routes.IgnoreRoute("{resource}.axd/{*pathInfo}"); */
+           routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "Products",
+                url: "Products/Products/{id}",
+                defaults: new { controller = "Products", action = "GetProducts" }
+            );
+           
+          
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

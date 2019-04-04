@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Database=localdb;Data Source=127.0.0.1:49497;User Id=azure;Password=6#vWHD_$" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\walkerc\\Documents\\GitHub\\lifebrands_v2\\lifebrands_v2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

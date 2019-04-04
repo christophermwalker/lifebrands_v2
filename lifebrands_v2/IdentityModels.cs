@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using lifebrands_v2.Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace IdentityMySQLDemo.Models
 {

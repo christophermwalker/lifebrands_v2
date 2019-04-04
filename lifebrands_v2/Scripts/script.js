@@ -1,22 +1,22 @@
-﻿$(function () {
+﻿ $(function () {
     $("#jqGrid").jqGrid({
-        url: "/Product/GetProducts",
+        url: "Products/GetProducts",
         datatype: 'json',
         mtype: 'Get',
         colNames: ['idProduct', 'Name', 'Cost', 'Wholesale Cost', 'Retail Price'],
         colModel: [
-            { key: true, hidden: true, name: 'idProduct', index: 'ID', editable: true },
-            { key: false, name: 'Name', index: 'name', editable: true },
-            { key: false, name: 'Cost', index: 'cost', editable: true },
-            { key: false, name: 'Wholesale Cost', index: 'wholesale_cost', editable: true},
-            { key: false, name: 'Retail Price', index: 'retail_price', editable: true }],
+            { key: true, hidden: true, name: 'idProduct', index: 'idProduct'},
+            { key: false, name: 'name', index: 'name', editable: true },
+            { key: false, name: 'cost', index: 'cost', editable: true },
+            { key: false, name: 'wholesale_cost', index: 'wholesale_cost', editable: true },
+            { key: false, name: 'retail_price', index: 'retail_price', editable: true }],
         pager: jQuery('#jqControls'),
         rowNum: 10,
         rowList: [10, 20, 30, 40, 50],
         height: '100%',
         viewrecords: true,
-        caption: 'Students Records',
-        emptyrecords: 'No Products Records are Available to Display',
+        caption: 'Products',
+        emptyrecords: 'No Products are Available to Display',
         jsonReader: {
             root: "rows",
             page: "page",
@@ -27,5 +27,41 @@
         },
         autowidth: true,
         multiselect: false
-    });
-}); 
+    }).navGrid('#jqControls', { edit: true, add: true, del: true, search: false, refresh: true },
+        {
+            zIndex: 100,
+            url: 'Products/Edit',
+            closeOnEscape: true,
+            closeAfterEdit: true,
+            recreateForm: true,
+            afterComplete: function (response) {
+                if (response.responseText) {
+                    alert(response.responseText);
+                }
+            }
+        },
+        {
+            zIndex: 100,
+            url: "Products/Create",
+            closeOnEscape: true,
+            closeAfterAdd: true,
+            afterComplete: function (response) {
+                if (response.responseText) {
+                    alert(response.responseText);
+                }
+            }
+        },
+        {
+            zIndex: 100,
+            url: "Products/Delete",
+            closeOnEscape: true,
+            closeAfterDelete: true,
+            recreateForm: true,
+            msg: "Are you sure you want to delete product... ? ",
+            afterComplete: function (response) {
+                if (response.responseText) {
+                    alert(response.responseText);
+                }
+            }
+        });
+});  

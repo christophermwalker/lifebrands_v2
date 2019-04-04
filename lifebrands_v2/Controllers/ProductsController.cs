@@ -1,6 +1,10 @@
-﻿using IdentityMySQLDemo.Models;
+﻿
 using lifebrands_v2.Entities;
+using lifebrands_v2.Models;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,25 +14,31 @@ namespace lifebrands_v2.Controllers
     public class ProductsController : Controller
     {
         // GET: Products
-        public ActionResult Products() => View();
-      
+        public ActionResult Products()
+        {
+
+            return View();
+        }
+
+
+
         public JsonResult GetProducts(string sidx, string sort, int page, int rows)
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            DatabaseContext db = new DatabaseContext();
             sort = (sort == null) ? "" : sort;
             int pageIndex = Convert.ToInt32(page) - 1;
             int pageSize = rows;
 
-            var ProductList = db.products.Select(
-                       t => new ProductsMaster
+            var ProductList = db.Products.Select(
+                       t => new
                        {
-                           idProduct = t.ToString(),
-                           name = t.ToString(),
-                           cost = t.ToString(),
-                           wholesale_cost = t.ToString(),
-                           retail_price = t.ToString()
+                           t.idProduct,
+                           t.name,
+                           t.cost,
+                           t.wholesale_cost,
+                           t.retail_price,
                        }
-                       ); 
+                       );
 
             int totalRecords = ProductList.Count();
             var totalPages = (int)Math.Ceiling((float)totalRecords / (float)rows);
@@ -51,5 +61,62 @@ namespace lifebrands_v2.Controllers
             };
             return Json(jsonData, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public string Create(products Model)
+        {
+            DatabaseContext db = new DatabaseContext();
+            string msg;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Model.idProduct = new Random().Next(1, 1000);
+                    db.Products.Add(Model);
+                    db.SaveChanges();
+                    msg = "Saved Successfully";
+                }
+                else
+                {
+                    msg = "Validation data not successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                msg = "Error occured:" + ex.Message;
+            }
+            return msg;
+        }
+        public string Edit(products Model)
+        {
+            DatabaseContext db = new DatabaseContext();
+            string msg;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    db.Entry(Model).State = EntityState.Modified;
+                    db.SaveChanges();
+                    msg = "Saved Successfully";
+                }
+                else
+                {
+                    msg = "Validation data not successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+                msg = "Error occured:" + ex.Message;
+            }
+            return msg;
+        }
+        public string Delete(string Id)
+        {
+            DatabaseContext db = new DatabaseContext();
+            products product = db.Products.Find(int.Parse(Id));
+            db.Products.Remove(product);
+            db.SaveChanges();
+            return "Deleted successfully";
+        }
     }
+
 }
