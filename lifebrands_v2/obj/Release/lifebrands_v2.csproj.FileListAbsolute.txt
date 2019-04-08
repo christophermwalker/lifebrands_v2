@@ -65,8 +65,6 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.dll
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.Entity.EF6.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Owin.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Diagnostics.DiagnosticSource.dll
@@ -367,9 +365,12 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Exte
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.ObjectPool.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.WebEncoders.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Net.Http.Headers.xml
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.xml
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.Entity.EF6.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.Bson.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Reflection.Metadata.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Text.Encodings.Web.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Data.SqlClient.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
