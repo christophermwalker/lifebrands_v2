@@ -199,6 +199,8 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Code
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -232,8 +234,6 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Win32.Registry.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MvcJqGrid.dll
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.dll
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.Entity.EF6.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.Bson.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Owin.dll
@@ -241,6 +241,7 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Remotion.Linq.
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Buffers.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Collections.Immutable.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.ComponentModel.Annotations.dll
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Data.SqlClient.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Interactive.Async.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\System.Memory.dll
@@ -317,6 +318,8 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Code
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.EntityFrameworkCore.SqlServer.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Caching.Abstractions.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Caching.Memory.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Extensions.Configuration.xml
@@ -346,8 +349,6 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.xml
-C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\MySql.Data.Entity.EF6.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Newtonsoft.Json.Bson.xml
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\bin\Remotion.Linq.xml
@@ -372,3 +373,4 @@ C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\obj\Debug\lifebran
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\obj\Debug\lifebrands_v2.csproj.CopyComplete
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\obj\Debug\lifebrands_v2.dll
 C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\obj\Debug\lifebrands_v2.pdb
+C:\Users\walkerc\Documents\GitHub\lifebrands_v2\lifebrands_v2\obj\Debug\lifebrands_v2.csprojAssemblyReference.cache

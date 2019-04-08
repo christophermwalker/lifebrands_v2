@@ -1,11 +1,11 @@
 ﻿ $(function () {
     $("#jqGrid").jqGrid({
-        url: "Home/GetProducts",
+        url: "Products/GetProducts",
         datatype: 'json',
         mtype: 'Get',
         colNames: ['idProduct', 'Name', 'Cost', 'Wholesale Cost', 'Retail Price'],
         colModel: [
-            { key: true, hidden: true, name: 'idProduct', index: 'idProduct'},
+            { key: true, name: 'idProduct', index: 'idProduct', editable: true},
             { key: false, name: 'name', index: 'name', editable: true },
             { key: false, name: 'cost', index: 'cost', editable: true },
             { key: false, name: 'wholesale_cost', index: 'wholesale_cost', editable: true },
@@ -30,7 +30,8 @@
     }).navGrid('#jqControls', { edit: true, add: true, del: true, search: false, refresh: true },
         {
             zIndex: 100,
-            url: 'Home/Edit',
+            url: '/Products/Edit',
+            editurl: '/Products/GetProducts',
             closeOnEscape: true,
             closeAfterEdit: true,
             recreateForm: true,
@@ -42,7 +43,8 @@
         },
         {
             zIndex: 100,
-            url: "Home/Create",
+            url: "/Products/Create",
+            editurl: '/Products/GetProducts',
             closeOnEscape: true,
             closeAfterAdd: true,
             afterComplete: function (response) {
@@ -53,7 +55,8 @@
         },
         {
             zIndex: 100,
-            url: "Home/Delete",
+            url: "/Products/Delete",
+            editurl:'/Products/GetProducts',
             closeOnEscape: true,
             closeAfterDelete: true,
             recreateForm: true,

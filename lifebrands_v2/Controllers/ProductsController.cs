@@ -4,10 +4,14 @@ using lifebrands_v2.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Query.Dynamic;
+using System.Web.Services;
 
 namespace lifebrands_v2.Controllers
 {
@@ -20,46 +24,49 @@ namespace lifebrands_v2.Controllers
 
             return View();
         }
+       public JsonResult GetProducts(string sidx, string sort, int pagein, int rows)
+       {
+           DatabaseContext db = new DatabaseContext();
+           sort = (sort == null) ? "" : sort;
+           int pageIndex = Convert.ToInt32(pagein) - 1;
+           int pageSize = rows;
 
-        public JsonResult GetProducts(string sidx, string sort, int page, int rows)
-        {
-            DatabaseContext db = new DatabaseContext();
-            sort = (sort == null) ? "" : sort;
-            int pageIndex = Convert.ToInt32(page) - 1;
-            int pageSize = rows;
+           var ProductList = db.Products.Select(
+                      t => new
+                      {
+                          t.idProduct,
+                          t.name,
+                          t.cost,
+                          t.wholesale_cost,
+                          t.retail_price,
+                      }
+                      );
 
-            var ProductList = db.products.Select(
-                       t => new
-                       {
-                           t.idProduct,
-                           t.name,
-                           t.cost,
-                           t.wholesale_cost,
-                           t.retail_price,
-                       }
-                       );
+           int totalRecords = ProductList.Count();
+           var totalPages = (int)Math.Ceiling((float)totalRecords / (float)rows);
+           
+           if (sort.ToUpper() == "DESC")
+           {
+               ProductList = ProductList.OrderByDescending(t => t.name);
+               ProductList = ProductList.Skip(pageIndex * pageSize).Take(pageSize);
+           }
+           else
+           {
+               ProductList = ProductList.OrderBy(t => t.name);
+               ProductList = ProductList.Skip(pageIndex * pageSize).Take(pageSize);
+           }
+          
+           var jsonData = new
+           {
+               total = totalPages,
+               page = 1,
+               records = totalRecords,
+               rows = ProductList
+           };
+           return Json(jsonData, JsonRequestBehavior.AllowGet);
+       }
+      
 
-            int totalRecords = ProductList.Count();
-            var totalPages = (int)Math.Ceiling((float)totalRecords / (float)rows);
-            if (sort.ToUpper() == "DESC")
-            {
-                ProductList = ProductList.OrderByDescending(t => t.name);
-                ProductList = ProductList.Skip(pageIndex * pageSize).Take(pageSize);
-            }
-            else
-            {
-                ProductList = ProductList.OrderBy(t => t.name);
-                ProductList = ProductList.Skip(pageIndex * pageSize).Take(pageSize);
-            }
-            var jsonData = new
-            {
-                total = totalPages,
-                page,
-                records = totalRecords,
-                rows = ProductList
-            };
-            return Json(jsonData, JsonRequestBehavior.AllowGet);
-        }
         [HttpPost]
         public string Create(products Model)
         {
@@ -70,7 +77,7 @@ namespace lifebrands_v2.Controllers
                 if (ModelState.IsValid)
                 {
                     Model.idProduct = Guid.NewGuid().ToString();
-                    db.products.Add(Model);
+                    db.Products.Add(Model);
                     db.SaveChanges();
                     msg = "Saved Successfully";
                 }
@@ -112,8 +119,8 @@ namespace lifebrands_v2.Controllers
         public string Delete(string Id)
         {
             DatabaseContext db = new DatabaseContext();
-            products product = db.products.Find(Id);
-            db.products.Remove(product);
+            products product = db.Products.Find(Id);
+            db.Products.Remove(product);
             db.SaveChanges();
             return "Deleted successfully";
         }

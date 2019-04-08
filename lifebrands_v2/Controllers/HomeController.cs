@@ -1,6 +1,5 @@
 ﻿using lifebrands_v2.Entities;
 using lifebrands_v2.Models;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
