@@ -249,18 +249,50 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\aspnetrolesController.cs" />
+    <Compile Include="Controllers\aspnetuserclaimsController.cs" />
+    <Compile Include="Controllers\AspnetuserController.cs" />
+    <Compile Include="Controllers\aspnetuserloginsController.cs" />
+    <Compile Include="Controllers\aspnetuserrolesController.cs" />
+    <Compile Include="Controllers\aspnetusers_has_eventController.cs" />
+    <Compile Include="Controllers\eventController.cs" />
+    <Compile Include="Controllers\event_has_promoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NotificationsController.cs" />
+    <Compile Include="Controllers\notifications_has_eventController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\promoController.cs" />
+    <Compile Include="Controllers\promo_has_eventController.cs" />
+    <Compile Include="Controllers\salesController.cs" />
+    <Compile Include="Controllers\sales_has_productsController.cs" />
+    <Compile Include="Controllers\vendorController.cs" />
+    <Compile Include="Controllers\vendor_has_eventController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\aspnetusers.cs" />
+    <Compile Include="Models\aspnetroles.cs" />
+    <Compile Include="Models\aspnetuserclaims.cs" />
+    <Compile Include="Models\aspnetuserlogins.cs" />
+    <Compile Include="Models\aspnetuserroles.cs" />
+    <Compile Include="Models\aspnetusers_has_event.cs" />
+    <Compile Include="Models\Notifications.cs" />
+    <Compile Include="Models\event.cs" />
+    <Compile Include="Models\event_has_promo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\notifications_has_event.cs" />
     <Compile Include="Models\products.cs" />
+    <Compile Include="Models\promo.cs" />
+    <Compile Include="Models\promo_has_event.cs" />
+    <Compile Include="Models\sales.cs" />
+    <Compile Include="Models\sales_has_products.cs" />
+    <Compile Include="Models\vendor.cs" />
+    <Compile Include="Models\vendor_has_event.cs" />
     <Compile Include="MySqlConfiguration.cs" />
     <Compile Include="MySqlHistoryContext.cs" />
     <Compile Include="MySqlInitializer.cs" />
@@ -466,6 +498,21 @@
     <Content Include="Views\Shared\Products.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Shared\aspnetroles.cshtml" />
+    <Content Include="Views\Shared\aspnetuserclaims.cshtml" />
+    <Content Include="Views\Shared\aspnetuserlogins.cshtml" />
+    <Content Include="Views\Shared\aspnetuserroles.cshtml" />
+    <Content Include="Views\Shared\aspnetusers_has_event.cshtml" />
+    <Content Include="Views\Shared\events.cshtml" />
+    <Content Include="Views\Shared\event_has_promo.cshtml" />
+    <Content Include="Views\Shared\Notifications.cshtml" />
+    <Content Include="Views\Shared\notifications_has_event.cshtml" />
+    <Content Include="Views\Shared\promo.cshtml" />
+    <Content Include="Views\Shared\promo_as_event.cshtml" />
+    <Content Include="Views\Shared\sales.cshtml" />
+    <Content Include="Views\Shared\sales_has_products.cshtml" />
+    <Content Include="Views\Shared\vendor.cshtml" />
+    <Content Include="Views\Shared\vendor_has_event.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -475,6 +522,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\aspnetroles\" />
+    <Folder Include="Views\aspnetuserclaims\" />
+    <Folder Include="Views\aspnetuserlogins\" />
+    <Folder Include="Views\aspnetuserroles\" />
+    <Folder Include="Views\aspnetusers_has_event\" />
+    <Folder Include="Views\Aspnetuser\" />
+    <Folder Include="Views\event\" />
+    <Folder Include="Views\event_has_promo\" />
+    <Folder Include="Views\Notifications\" />
+    <Folder Include="Views\notifications_has_event\" />
+    <Folder Include="Views\promo\" />
+    <Folder Include="Views\promo_has_event\" />
+    <Folder Include="Views\sales\" />
+    <Folder Include="Views\sales_has_products\" />
+    <Folder Include="Views\vendor\" />
+    <Folder Include="Views\vendor_has_event\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
