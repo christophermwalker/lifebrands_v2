@@ -7,7 +7,7 @@ namespace lifebrands_v2.Entities
     public class  products
     {
         [Key]
-        public int idProduct { get; set; }
+        public String idProduct { get; set; }
         [Required]
         public String name { get; set; }
         [Required]

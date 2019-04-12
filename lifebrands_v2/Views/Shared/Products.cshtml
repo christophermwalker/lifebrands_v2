@@ -1,6 +1,8 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
 @{ ViewBag.Title = "Products";
+
 }
+@using MvcJqGrid 
 
 <h2>Products</h2>
 
@@ -15,7 +17,4 @@
     <script src="~/Scripts/i18n/grid.locale-en.js"></script>
     <script src="~/Scripts/jquery.jqGrid.min.js"></script>
     <script src="~/Scripts/script.js"></script>
-    <script type="text/javascript">
-        jQuery.extend(jQuery.jgrid.defaults, datatype = "json");
-    </script>
 }

@@ -13,14 +13,13 @@ namespace lifebrands_v2.Controllers
 {
     public class ProductsController : Controller
     {
+
         // GET: Products
         public ActionResult Products()
         {
 
             return View();
         }
-
-
 
         public JsonResult GetProducts(string sidx, string sort, int page, int rows)
         {
@@ -29,7 +28,7 @@ namespace lifebrands_v2.Controllers
             int pageIndex = Convert.ToInt32(page) - 1;
             int pageSize = rows;
 
-            var ProductList = db.Products.Select(
+            var ProductList = db.products.Select(
                        t => new
                        {
                            t.idProduct,
@@ -70,8 +69,8 @@ namespace lifebrands_v2.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Model.idProduct = new Random().Next(1, 1000);
-                    db.Products.Add(Model);
+                    Model.idProduct = Guid.NewGuid().ToString();
+                    db.products.Add(Model);
                     db.SaveChanges();
                     msg = "Saved Successfully";
                 }
@@ -86,6 +85,7 @@ namespace lifebrands_v2.Controllers
             }
             return msg;
         }
+   
         public string Edit(products Model)
         {
             DatabaseContext db = new DatabaseContext();
@@ -112,8 +112,8 @@ namespace lifebrands_v2.Controllers
         public string Delete(string Id)
         {
             DatabaseContext db = new DatabaseContext();
-            products product = db.Products.Find(int.Parse(Id));
-            db.Products.Remove(product);
+            products product = db.products.Find(Id);
+            db.products.Remove(product);
             db.SaveChanges();
             return "Deleted successfully";
         }

@@ -48,7 +48,7 @@ namespace lifebrands_v2.Models
             base.OnModelCreating(modelBuilder);
         }
 
-        public virtual DbSet<products> Products { get; set; }
+        public virtual DbSet<products> products { get; set; }
         public static DatabaseContext Create()
         {
             return new DatabaseContext();
